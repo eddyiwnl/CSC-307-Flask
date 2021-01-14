@@ -45,10 +45,10 @@ def get_users():
             user_id = []
             for i in range(6):
                 user_id.append(random.choice(id_chars))
-        user_id_str = ''.join(user_id)
-        userToAdd['id'] = user_id_str
+            user_id_str = ''.join(user_id)
+            userToAdd['id'] = user_id_str
         users['users_list'].append(userToAdd)
-        resp = jsonify(success=True)
+        resp = jsonify(userToAdd)
         resp.status_code = 201 #optionally, you can always set a response code.
         # 200 is the default code for a normal response
         return resp
@@ -56,6 +56,7 @@ def get_users():
         userToRemove = request.get_json()
         users['users_list'].remove(userToRemove)
         resp = jsonify(success=True)
+        resp.status_code = 200
         return resp
 
 
