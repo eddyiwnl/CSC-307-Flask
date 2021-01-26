@@ -1,0 +1,4 @@
+cmd 1 - venv and flask run
+cmd 2 - mongo
+cmd 3 - npm start (in react-db)
+
